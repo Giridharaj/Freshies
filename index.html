@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- icon -->
+    <link rel="Website Icon" href="icon.logo.jpeg">
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Freshies</title>
+</head>
+<body>
+    <header class="border-bottom">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <a href="#" class="d-flex align-items-center text-decoration-none">
+                        <img src="icon.logo.jpeg" alt="Fresh & Fruits logo" class="logo"><span class="fs-4 ms-2 text-dark font-weight-bold">Freshies</span>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <select class="form-select w-auto">
+                            <option>All Categories</option>
+                            <option>Fruits</option>
+                            <option>Vegetables</option>
+                        </select>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search Products">
+                        <button class="btn btn-success" type="button" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3 text-end header-icons">
+                    <a href="#" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#wishlistModal">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="wishlistCount">0</span>
+                    </a>
+                    <a href="#" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <span class="ms-2">Cart: ₹<span id="cartTotal">0.00</span></span>
+                    <button class="btn btn-outline-success btn-sm ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+            <div class="container">
+                <button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggle-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-start font-weight-bold">
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">SHOP</a></li>
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">PRODUCTS</a></li>
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">OFFERS</a></li>
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">NEW ARRIVALS</a></li>
+                        <li class="nav-item"><a class="nav-link active text-success" href="#">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-section text-center text-white py-5 d-flex align-items-center">
+        <div class="container">
+            <p class="h6 text-uppercase fw-bold text-success mb-1">100% Healthy and Affordable</p>
+            <h1 class="display-3 fw-bold text-white">Organic Products</h1>
+            <p class="lead text-white fw-bold">Small changes, Big differences</p>
+            <button class="btn btn-success btn-lg px-5 py-3">Shop Now</button>
+        </div>
+    </section>
+    <section class="category-grid container mt-5">
+        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-8 g-3 text-center">
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="fruits.jpeg" alt="Fruits" class="img-fluid-mb-2"> Fruits</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="vegetables.jpeg" alt="vegetables" class="img-fluid-mb-2">  Vegetables</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="meat.jpeg"meat" class="img-fluid-mb-2"> Meat</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="Sea_food.jpeg" alt="seafood" class="img-fluid-mb-2"> Sea Food</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="Dairy_products.jpeg" alt="dairy products" class="img-fluid-mb-2"> Dairy</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="Groceries.jpeg" alt="groceries" class="img-fluid-mb-2"> Groceries</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="Poultry_products.jpeg" alt="Poultry" class="img-fluid-mb-2"> Poultry</div></div>
+            <div class="col"><div class="p-3 border rounded text-success fw-bold"><img src="Frozen_food.jpeg" alt="Frozen_products" class="img-fluid-mb-2"> Frozen</div></div>
+        </div>
+    </section>
+    <script type="text/template" id="product-template">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+            <div class="card h-100 product-card">
+                <span class="badge bg-success position-absolute top-0 start-0 m-2 tag-organic">Organic</span>
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2 tag-discount">-20%</span>
+                <img src="{{imageUrl}}" class="card-img-top p-3" alt="{{name}}">
+                <div class="card-body text-center d-flex flex-column">
+                    <h6 class="card-title fw-bold text-dark">{{name}} ({{quantity}})</h6>
+                    <div class="mb-2 d-flex justify-content-center align-items-center">
+                        <span class="h5 text-success fw-bold me-2">{{discountPrice}} AED</span>
+                        <del class="text-secondary">{{originalPrice}} AED</span>
+                    </div>
+                    <div class='mt-auto'>
+                        <button class='btn btn-outline-success btn-sm add-to-cart-btn' data-product-name="{{name}}" data-product-price="{{discountedPrice}}" data-product-image="{{imageUrl}}"><img src="cart.jpeg" alt="cart" class="w-25 h-25"></button>
+                        <button class='btn btn-outline-success btn-sm wishlist-btn' data-product-name="{{name}}" data-product-price="{{discountedPrice}}" data-product-image="{{imageUrl}}"><i class="fa-solid fa-heart"></i></button>
+                        <button class='btn btn-outline-info btn-sm quick-view-btn' data-product-name="{{name}}" data-product-price="{{discountedPrice}}" data-product-image="{{imageUrl}}" data-product-quantity="{{quantity}}"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <main class="container my-5">
+        <section>
+            <h2 class="text-center text-success mb-4 fw-bold">Featured Products</h2>
+            <div id="featured-products" class="row"></div>
+        </section>
+        <section class="discount-banner my-5 p-5 text-white" style="background:url('offer.jpg') no-repeat center center/cover;">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="baskets.jpg" alt="Products baskets" class="img-fluid">
+                </div>
+                <div class="col-md-8 text-dark">
+                    <h2 class="display-5 fw-bold text-success">SAVE UP TO 20%</h2>
+                    <h3 class="fw-bold">Organic Foods</h3>
+                    <p class="fw-bold text-dark">Start your daily shopping with organic products</p>
+                    <button class="btn btn-success btn-lg">Order Now</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-center text-succes mb-4 fw-bold">Best Seller</h2>
+            <div id="bestseller-products" class="row"></div>
+        </section>
+        <section class="healthy-banner my-5 py-5 text-center text-white d-flex align-items-center">
+            <div class="container text-dark">
+                <h2 class="display-6 fw-bold">Our Organic Foods are</h2>
+                <h1 class="display-3 fw-bold text-light">Healthy Inside, Fresh Outside</h1>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-center text-success mb-4 fw-bold">Best Organic</h2>
+            <div id="best-organic-products" class="row"></div>
+        </section>
+    </main>
+    <section class="subscribe-section py-5 my-5 text-center bg-light">
+        <div class="container col-md-6 border p-4 bg-white rounded">
+            <h3 class="text-success fw-bold">Subscribe Us</h3>
+            <p> To get discount and offers up-to-date</p>
+            <div class="input-group mt-3">
+                <input type="email" class="form-control" placeholder="Your Email Addresss">
+                <button class="btn btn-success" type="button">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <section class="certification-section bg-success text-white py-4 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 certificate">
+                    <img src="delivery.jpeg" alt="Free shipping">
+                    <h3>Free Shipping</h3>
+                    <p>Free Shipping <br> On order over AED 100</p>
+                </div>
+                <div class="col-md-3 certificate">
+                    <img src="money.jpeg" alt="Money Return">
+                    <h3>Money Return</h3>
+                    <p>30 Days guarantee</p>
+                </div>
+                <div class="col-md-3 certificate">
+                    <img src="support.jpeg" alt="support">
+                    <h3>Support 24/7</h3>
+                    <p>Online 24/7 Service</p>
+                </div>
+                <div class="col-md-3 certificate">
+                    <img src="payment.png" alt="Safe Payment">
+                    <h3>Safe payment</h3>
+                    <p>100% Secure Payment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3 text-success">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Shopping Carts</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3 text-success">Information</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Terms and Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold mb-3 text-success">Categories</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Fruits</a></li>
+                    <li><a href="#">Vegetables</a></li>
+                    <li><a href="#">Meat</a></li>
+                    <li><a href="#">Sea Food</a></li>
+                    <li><a href="#">Dairy</a></li>
+                    <li><a href="#">Poultry</a></li>
+                    <li><a href="#">Frozen</a></li>
+                    <li><a href="#">Groceries</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4 footer-contact">
+                <h5 class="fw-bold mb-3 text-success">About Store</h5>
+                <p><i class="fas fa-phone-alt me-2 text-success"></i> +971 123 456 7890</p>
+                <p><i class="fas fa-envelope me-2 text-success"></i> info@freshnfruits.com</p>
+                <p><i class="fas fa-map-marker-alt me-2 text-success"></i> 123, Street, Dubai, Country</p>
+                <div class="footer-social mt-3">
+                    <a href="https://www.facebook.com/" class="me-2 text-success"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/" class="me-2 text-success"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/" class="me-2 text-success"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/?hl=en" class="text-success"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center py-3 bg-dark text-secondary border-top border-secondary">
+        <small>Copyright 2024 Fresh & Fruits. All rights reserved.</small>
+    </div>
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div class="mt-3">
+                        <h5>Total: ₹<span id="modalCartTotal">0.00</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wishlistModalLabel">My Wishlist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="wishlistItems"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login / Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="authTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="authTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Login</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="registerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="quickViewImage" src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="quickViewName"></h4>
+                            <p id="quickViewQuantity"></p>
+                            <h5 class="text-success">₹<span id="quickViewPrice"></span></h5>
+                            <div class="mt-3">
+                                <label for="quantity" class="form-label">Quantity:</label>
+                                <input type="number" class="form-control" id="quickViewQuantityInput" value="1" min="1">
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-success w-100" id="quickViewAddToCart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="productLoader.js"></script>
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script src="auth.js"></script>
+    <script src="quickView.js"></script>
+</body>
+</html>
